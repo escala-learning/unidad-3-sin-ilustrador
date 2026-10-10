@@ -1,0 +1,84 @@
+      <header class="ova-screen__head" data-reveal>
+        <div class="ova-screen__eyebrow">Introducción</div>
+        <!-- EDITORIAL · título de pantalla: sale de la frase de la unidad, «se demuestra con evidencia, no se declara con políticas» -->
+        <h1 class="ova-screen__title">Demostrar, <span class="sl-suave">no</span> <span class="sl-italic">declarar</span></h1>
+      </header>
+
+      <!-- Apertura de la unidad (INSTITUCION §7.1): la primera frase de la entrada del DI, sin
+           etiqueta. El resto del párrafo sigue debajo, completo y en orden. -->
+      <div class="sl-apertura" data-reveal>
+        <p>La idea central de esta unidad es que <span class="sl-italic"><strong>el gobierno de datos se demuestra con evidencia, no se declara con políticas</strong></span>.</p>
+      </div>
+
+      <p style="margin-top:32px;" data-reveal>Una obligación sin control técnico es una declaración; un control sin evidencia no es demostrable ante un auditor ni ante la autoridad; y una evidencia que nadie revisa caduca. Esa cadena —obligación, decisión de gobierno, control técnico, evidencia y verificación periódica— es la estructura que recorre los tres temas y la que conviene retener por encima de cualquier terminología.</p>
+
+      <!-- Los tres párrafos paralelos de la entrada («En el primer/segundo/tercer tema…»), en
+           lista numerada (.sl-numerada, skin) para leerlos como recorrido. Texto completo y en
+           orden; solo cambia el formato. Números e iconos: capa editorial, decorativos. -->
+      <ol class="sl-numerada" data-reveal>
+        <li class="sl-numerada__item">
+          <div class="sl-numerada__marca" aria-hidden="true"><span class="sl-numerada__num">01</span><iconify-icon class="sl-numerada__icono" icon="mdi:account-tie-outline"></iconify-icon></div>
+          <p>En el primer tema distinguió tres funciones que suelen confundirse. El gobierno decide: define quién tiene autoridad sobre qué datos, con qué reglas y bajo qué excepciones. La gestión ejecuta: planifica, opera y mantiene el ciclo de vida del dato. La administración cotidiana, ejercida por quienes conocen el dominio, vela por el cumplimiento de esas reglas en el día a día. La causa más frecuente de fracaso no es la falta de tecnología, sino un comité sin autoridad real, políticas sin responsable con nombre y herramientas adquiridas antes de haber definido qué decisiones debían tomarse. Retenga también que la clasificación de los datos por sensibilidad no es un ejercicio documental: es lo que determina qué controles técnicos se aplican a cada conjunto.</p>
+        </li>
+        <li class="sl-numerada__item">
+          <div class="sl-numerada__marca" aria-hidden="true"><span class="sl-numerada__num">02</span><iconify-icon class="sl-numerada__icono" icon="mdi:source-branch"></iconify-icon></div>
+          <p>En el segundo tema trabajó la calidad y la trazabilidad. La calidad no es una cualidad general del dato, sino un conjunto de dimensiones medibles —exactitud, completitud, consistencia, unicidad, validez y oportunidad— que se traducen en reglas con umbral, responsable y acción ante el incumplimiento. Sin esos cuatro elementos, medir calidad produce tableros que nadie atiende. Los metadatos y el catálogo resuelven el problema del significado y de la propiedad; el linaje resuelve el del origen, y es lo que permite explicar una cifra, analizar el impacto de un cambio y, sobre todo, localizar dónde vive la información de un titular cuando este ejerce su derecho de supresión.</p>
+        </li>
+        <li class="sl-numerada__item">
+          <div class="sl-numerada__marca" aria-hidden="true"><span class="sl-numerada__num">03</span><iconify-icon class="sl-numerada__icono" icon="mdi:shield-lock-outline"></iconify-icon></div>
+          <p>En el tercer tema abordó la seguridad, la privacidad y el cumplimiento. Los controles de acceso deben aplicarse lo más cerca posible del dato y no en la capa de aplicación; la seudonimización y la anonimización no son sinónimos, y la segunda es mucho más difícil de lograr de lo que suele suponerse; y el registro de auditoría es el control que convierte una política de acceso en algo demostrable. Sobre el marco peruano, retenga las obligaciones que tienen consecuencia técnica inmediata: inscripción de los bancos de datos, consentimiento expreso, específico e informado, designación del Oficial de Datos Personales según el cronograma vigente, evaluación de impacto para tratamientos de riesgo, registro de incidentes, notificación a la autoridad dentro de las cuarenta y ocho horas, y condiciones para las transferencias internacionales, que alcanzan a cualquier servicio en la nube alojado fuera del país.</p>
+        </li>
+      </ol>
+
+      <p data-reveal>Dos errores conviene evitar de manera explícita: suponer que cifrar equivale a cumplir, cuando el cifrado protege frente a un acceso no autorizado al medio pero no frente a un usuario legítimo que consulta lo que no le corresponde; y declarar anonimizado un conjunto de datos que conserva combinaciones de atributos capaces de reidentificar a una persona. Si algo le resultó difícil, probablemente fue traducir una obligación normativa en un control técnico con evidencia verificable; esa traducción es, precisamente, la competencia que distingue a un arquitecto de datos de un especialista en cumplimiento documental. Con esta unidad cierra el recorrido de la asignatura: el portafolio integrador le exigirá articular las decisiones de persistencia de la Unidad 1, la optimización de la arquitectura de la Unidad 2 y los controles de gobierno trabajados aquí, mostrando que las tres capas son coherentes entre sí.</p>
+
+      <!-- ════ Sección de la introducción ════ -->
+      <section class="sl-seccion" id="que-va-a-lograr" data-reveal>
+        <!-- Título del DI -->
+        <h2 class="sl-seccion__titulo">¿Qué va a lograr <span class="sl-suave">en esta</span> <span class="sl-italic">unidad</span>?</h2>
+        <!-- Los cuatro campos del DI, rótulo y texto literales. En el Word son cuatro subtítulos
+             del mismo nivel bajo «¿Qué va a lograr en esta unidad?»: van en .sl-campos (skin),
+             iguales, sin tarjetas, uno por fila con su icono. Los iconos son capa editorial
+             (decorativos; el subtítulo dice lo que es cada campo). -->
+        <div class="sl-campos">
+          <div class="sl-campo">
+            <iconify-icon class="sl-campo__icono" icon="mdi:target" aria-hidden="true"></iconify-icon>
+            <h3 class="sl-campo__titulo">Resultado de aprendizaje</h3>
+            <p>Aplica principios de gobierno de datos relacionados con calidad, metadatos, linaje, seguridad, privacidad y cumplimiento normativo, utilizando mecanismos de persistencia y procesamiento de datos para establecer controles pertinentes en un sistema empresarial.</p>
+          </div>
+          <div class="sl-campo">
+            <iconify-icon class="sl-campo__icono" icon="mdi:account-group-outline" aria-hidden="true"></iconify-icon>
+            <h3 class="sl-campo__titulo">Público objetivo</h3>
+            <p>Profesionales del área de Ingeniería de Sistemas con Mención de Ingeniería de <em>Software</em>, en el contexto peruano.</p>
+          </div>
+          <div class="sl-campo">
+            <iconify-icon class="sl-campo__icono" icon="mdi:book-open-page-variant-outline" aria-hidden="true"></iconify-icon>
+            <h3 class="sl-campo__titulo">¿Qué va a aprender?</h3>
+            <p>Gestiona datos y persistencia en sistemas complejos diseñando esquemas eficientes, optimizando performance y aplicando principios de gobierno de datos en entornos relacionales y no relacionales.</p>
+          </div>
+          <div class="sl-campo">
+            <iconify-icon class="sl-campo__icono" icon="mdi:file-document-check-outline" aria-hidden="true"></iconify-icon>
+            <h3 class="sl-campo__titulo">Evidencia de la unidad</h3>
+            <p>Esquema de gobierno de datos para un escenario empresarial, con clasificación de los datos, reglas de calidad, responsables y roles, metadatos y trazabilidad, mecanismos de protección, obligaciones normativas aplicables y controles técnicos implementables con su evidencia de verificación.</p>
+          </div>
+        </div>
+      </section>
+
+      <a class="ova-btn ova-btn--outline" href="tema1.html" style="align-self:flex-start; margin-top:44px;" data-reveal>
+        Empezar el tema 1 <iconify-icon icon="mdi:arrow-right"></iconify-icon>
+      </a>
+
+<!-- ova:extras -->
+<style>
+  /* Móvil (INSTITUCION §4.14): la ilustración rotulada conserva un ancho legible y se
+     desliza dentro de su contenedor. */
+  @media (max-width: 700px){
+    .sl-ilustracion--rotulada{
+      overflow-x:auto; -webkit-overflow-scrolling:touch;
+      /* pista de que sigue a la derecha (mismo recurso que .sl-diagrama en la capa Scala) */
+      -webkit-mask-image:linear-gradient(to right, #000 calc(100% - 32px), transparent);
+              mask-image:linear-gradient(to right, #000 calc(100% - 32px), transparent);
+    }
+    .sl-ilustracion--rotulada img{ min-width:720px; }
+  }
+</style>

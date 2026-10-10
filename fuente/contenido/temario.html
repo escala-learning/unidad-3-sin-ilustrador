@@ -1,0 +1,27 @@
+      <header class="ova-screen__head" data-reveal>
+        <!-- Eyebrow: el número de la unidad (campo «Unidad» de la portada del DI). Título: el
+             encabezado literal de la sección del DI, «Contenido de la unidad». -->
+        <div class="ova-screen__eyebrow">Unidad 3</div>
+        <h1 class="ova-screen__title">Contenido <span class="sl-suave">de la</span> <span class="sl-italic">unidad</span></h1>
+      </header>
+
+      <!-- Resultado de aprendizaje · rótulo y texto literales del DI, sección «Contenido de la
+           unidad», donde encabeza el índice. El DI lo repite igual en «¿Qué va a lograr en esta
+           unidad?» (Introducción): va en los dos sitios, como en el Word, y con la misma pieza
+           (.sl-campo con la diana, sin tarjeta). Fuera de una sección no lleva sangría: lo
+           resuelve el skin. El icono es capa editorial (decorativo). -->
+      <div class="sl-campo" data-reveal>
+        <iconify-icon class="sl-campo__icono" icon="mdi:target" aria-hidden="true"></iconify-icon>
+        <h3 class="sl-campo__titulo">Resultado de aprendizaje</h3>
+        <p>Aplica principios de gobierno de datos relacionados con calidad, metadatos, linaje, seguridad, privacidad y cumplimiento normativo, utilizando mecanismos de persistencia y procesamiento de datos para establecer controles pertinentes en un sistema empresarial.</p>
+      </div>
+
+      <!-- Índice generado desde ova.config.js. El DI de este demo solo trae el Tema 1
+           (decisión del cliente, 2026-10-08): no se anuncian temas sin pantalla. -->
+      <div class="sl-temario" data-reveal>
+{{TEMARIO}}
+      </div>
+
+      <a class="ova-btn ova-btn--outline" href="introduccion.html" style="align-self:flex-start;">
+        Comenzar por la introducción <iconify-icon icon="mdi:arrow-right"></iconify-icon>
+      </a>

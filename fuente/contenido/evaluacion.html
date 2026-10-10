@@ -1,0 +1,71 @@
+      <header class="ova-screen__head" data-reveal>
+        <div class="ova-screen__eyebrow">Evaluación</div>
+        <h1 class="ova-screen__title">Ponga a prueba <span class="sl-suave">lo trabajado en</span> <span class="sl-italic">la unidad</span></h1>
+      </header>
+
+      <!-- Banco: insumos/Preguntas_unidad.docx (una pregunta; decisión del cliente para el demo).
+           El banco no trae retroalimentación por opción: el motor muestra su mensaje genérico. -->
+      <div class="ova-evalquiz" data-ova-evalquiz data-label-item="Pregunta" data-label-items="preguntas" data-reveal>
+        <div class="ova-evalquiz__slide is-active" data-slide="intro">
+          <div class="sl-eval__cuerpo">
+            <!-- EDITORIAL · presentación de la evaluación -->
+            <p class="sl-eval__lead">Una pregunta sobre el tema de la unidad: <strong>gobierno de datos</strong>.</p>
+
+            <div class="sl-eval__datos">
+              <div class="sl-eval__dato">
+                <span class="v">1</span>
+                <span class="l">pregunta</span>
+              </div>
+              <div class="sl-eval__dato">
+                <span class="v">1</span>
+                <span class="l">tema cubierto</span>
+              </div>
+            </div>
+
+            <button class="ova-evalquiz__btn ova-evalquiz__btn--primary" data-evalquiz-go="1">
+              Comenzar <iconify-icon icon="mdi:arrow-right"></iconify-icon>
+            </button>
+            <p class="sl-eval__ayuda">También puede moverse con las flechas del teclado.</p>
+          </div>
+        </div>
+        <div class="ova-evalquiz__slide" data-slide="r1" data-section="Tema 1 — Gobierno de datos" data-section-color="acento">
+          <div class="sl-eval__cuerpo">
+            <div class="ova-quiz">
+              <span class="sl-eval__tema">Tema 1 — Gobierno de datos</span>
+              <h3 class="ova-quiz__question">¿Cuál es la función que ejecuta: planifica, diseña, opera y mantiene los datos a lo largo de su ciclo de vida?</h3>
+              <div class="ova-quiz__opts">
+                <button class="ova-quiz__opt" data-correct="true">
+                  <strong>A.</strong> Gestión de datos
+                </button>
+                <button class="ova-quiz__opt" data-correct="false">
+                  <strong>B.</strong> Administración cotidiana
+                </button>
+                <button class="ova-quiz__opt" data-correct="false">
+                  <strong>C.</strong> Matriz por área
+                </button>
+                <button class="ova-quiz__opt" data-correct="false">
+                  <strong>D.</strong> Matriz por decisión
+                </button>
+              </div>
+              <div class="ova-quiz__feedback"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ova-evalquiz__slide" data-slide="cierre">
+          <div class="ova-evalquiz__section" style="text-align:left;">
+            <h2 style="margin:0 0 14px;">Evaluación completada</h2>
+            <button class="ova-evalquiz__btn" data-evalquiz-restart style="margin-top:22px;">
+              <iconify-icon icon="mdi:refresh"></iconify-icon> Volver a intentarlo
+            </button>
+          </div>
+        </div>
+
+        <div class="ova-evalquiz__nav" data-evalquiz-nav>
+          <button class="ova-evalquiz__btn ova-evalquiz__btn--prev" data-evalquiz-prev aria-label="Pregunta anterior" title="Anterior"><iconify-icon icon="mdi:arrow-left"></iconify-icon></button>
+          <div class="ova-evalquiz__progress-bar">
+            <div class="ova-evalquiz__progress-fill" data-evalquiz-progress></div>
+          </div>
+          <span class="ova-evalquiz__counter" data-evalquiz-counter></span>
+          <button class="ova-evalquiz__btn ova-evalquiz__btn--primary" data-evalquiz-next>Siguiente <iconify-icon icon="mdi:arrow-right"></iconify-icon></button>
+        </div>
+      </div>

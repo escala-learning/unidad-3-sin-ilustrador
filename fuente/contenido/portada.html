@@ -1,0 +1,256 @@
+<style>
+  /* =========================================================
+     PORTADA · Scala Learning
+     Gradiente firma (violeta profundo → violeta → dorado),
+     rueda sangrada, foto enmarcada y film grain sutil.
+     El CSS de portada viaja por curso.
+     ========================================================= */
+  .sl-portada{
+    position:relative; overflow:hidden; isolation:isolate;
+    min-height:100vh; min-height:100dvh;
+    display:flex; align-items:center;
+    background: var(--grad-scala);
+  }
+  /* film grain · textura, no efecto (brandbook p. 17) */
+  .sl-portada::after{
+    content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+    opacity:.05; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  /* rueda de marca sangrada por la esquina superior derecha */
+  .sl-portada__rueda{
+    position:absolute; top:-16vw; right:-12vw; z-index:1;
+    --sl-rueda-size:min(56vw, 720px);
+    opacity:.14; pointer-events:none;
+  }
+  .sl-portada__inner{
+    position:relative; z-index:2;
+    width:100%; max-width:1240px; margin:0 auto;
+    padding:clamp(32px, 6vw, 88px);
+    display:grid; grid-template-columns:1fr 1.06fr; gap:clamp(28px, 4vw, 56px);
+    align-items:center;
+  }
+  .sl-portada__logo img{ height:56px; width:auto; display:block; margin-bottom:clamp(28px, 5vh, 56px); }
+  .sl-portada__eyebrow{
+    display:inline-flex; align-items:center; gap:12px;
+    font-family:var(--font-display); font-weight:600; font-size:.78rem;
+    letter-spacing:.16em; text-transform:uppercase;
+    color:var(--c-calido); margin-bottom:18px;
+  }
+  .sl-portada__eyebrow::before{ content:''; width:32px; height:3px; background:var(--c-calido); border-radius:2px; }
+  .sl-portada__title{
+    margin:0 0 18px; color:#fff;
+    font-family:var(--font-display); font-weight:600;
+    font-size:clamp(2.6rem, 5.6vw, 4.2rem); line-height:1.06; letter-spacing:-.02em;
+  }
+  .sl-portada__title .sl-suave{ color:rgba(255,255,255,.68); font-weight:300; }
+  /* Título largo (el del DI trae dos puntos y su remate): un escalón menos, para que el
+     bloque completo —título, subtítulo, frase y botón— siga cabiendo en la primera pantalla */
+  .sl-portada__title--largo{ font-size:clamp(2.1rem, 4.2vw, 3.2rem); margin-bottom:14px; }
+  .sl-portada__sub{
+    margin:0 0 28px; color:rgba(255,255,255,.72);
+    font-size:clamp(1rem, 1.6vw, 1.2rem); font-weight:300;
+  }
+  .sl-portada__quote{
+    font-family:var(--font-serif); font-style:italic;
+    color:#fff; font-size:clamp(1.05rem, 1.7vw, 1.3rem); line-height:1.55;
+    max-width:520px; margin:0 0 38px;
+    padding-left:20px; border-left:3px solid var(--c-calido);
+  }
+  /* CTA blanco: sobre el gradiente violeta el amarillo nunca es un control */
+  .sl-portada__cta{
+    display:inline-flex; align-items:center; gap:10px;
+    background:#fff; color:var(--c-acento); text-decoration:none;
+    font-family:var(--font-display); font-weight:600; font-size:1rem;
+    padding:16px 30px; border-radius:999px;
+    box-shadow:0 14px 34px rgba(38,29,74,.35);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .sl-portada__cta:hover{ transform:translateY(-2px); box-shadow:0 20px 44px rgba(38,29,74,.45); }
+  /* Descarga del cuaderno: acción secundaria, así que solo el icono en un
+     botón circular fantasma. Un pill con texto al lado del CTA competía con
+     la acción principal de entrar al curso. */
+  .sl-portada__acciones{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  /* Botón fantasma: solo el filo, sin relleno. El feedback no lo da un fondo
+     sino el gesto — al pasar el mouse la flecha cae sobre la bandeja, que es
+     literalmente lo que la acción hace. Por eso el icono es SVG propio: el
+     web component de iconify no deja animar sus partes por dentro. */
+  .sl-portada__descarga{
+    display:inline-grid; place-items:center;
+    width:52px; height:52px; border-radius:50%;
+    color:#fff; text-decoration:none;
+    background:transparent;
+    border:1.5px solid rgba(255,255,255,.45);
+    transition:border-color .2s ease;
+  }
+  .sl-portada__descarga svg{
+    width:21px; height:21px;
+    fill:none; stroke:currentColor;
+    stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
+    overflow:visible;
+  }
+  .sl-portada__descarga .sl-flecha{
+    transition:transform .28s cubic-bezier(.34,1.4,.64,1);
+  }
+  /* El color se fija en los dos estados: el motor tiñe todo enlace en hover
+     (core.css → a:hover{color:acento-deep}) y el trazo, que es currentColor,
+     se volvía violeta sobre el gradiente. */
+  .sl-portada__descarga:hover,
+  .sl-portada__descarga:focus-visible{ border-color:#fff; color:#fff; outline:none; }
+  .sl-portada__descarga:hover .sl-flecha,
+  .sl-portada__descarga:focus-visible .sl-flecha{ transform:translateY(3.5px); }
+  @media (prefers-reduced-motion: reduce){
+    .sl-portada__descarga .sl-flecha{ transition:none; }
+    .sl-portada__descarga:hover .sl-flecha{ transform:none; }
+  }
+  /* La foto va enmarcada por la rueda, que es como la marca trata sus
+     imágenes (brandbook p. 15): el recurso gráfico muerde la fotografía. */
+  .sl-portada__figura{ display:block; }
+  .sl-portada__figura svg{ width:100%; height:auto; display:block;
+    filter: drop-shadow(0 30px 60px rgba(38,29,74,.45)); }
+
+  /* --- Entrada de la portada (en prueba desde el 2026-10-09) -----------------
+     Al abrir, las dos ruedas llegan a su sitio girando en sentidos contrarios
+     —el aro del retrato a la derecha, la rueda del fondo a la izquierda—, la
+     foto se asienta (104 % → 100 %) y detrás del retrato se enciende despacio
+     una luz cálida que se queda quieta. Todo dura ~3 s y queda quieto, salvo
+     la deriva lenta: el aro a 90 s por vuelta y la rueda del fondo a 140 s en
+     el otro sentido. Con mouse, mover el puntero en horizontal gira las dos
+     ruedas hacia lados opuestos (el script al pie). Sin destellos ni brillos
+     que se encienden y apagan (se probó una franja de luz cruzando el fondo:
+     se leía como efecto, 2026-10-09). Solo transform y opacity; nada pasa por
+     encima del texto; con movimiento reducido, nada. */
+  @keyframes sl-portada-aro-entra{ from{ transform:rotate(-228deg); } to{ transform:rotate(-48deg); } }
+  .sl-portada .sl-rueda-portada{
+    animation: sl-portada-aro-entra 1.8s cubic-bezier(.16,1,.3,1) both,
+               sl-girar-portada 90s linear 1.8s infinite;
+    rotate: calc(var(--sl-giro, 0) * 1deg);
+    transition: rotate 1s cubic-bezier(.2,.8,.2,1);
+  }
+  @keyframes sl-portada-fondo-entra{ from{ transform:rotate(200deg); opacity:0; } }
+  @keyframes sl-portada-fondo-gira{ to{ transform:rotate(-360deg); } }
+  .sl-portada__rueda{
+    animation: sl-portada-fondo-entra 2s cubic-bezier(.16,1,.3,1) both,
+               sl-portada-fondo-gira 140s linear 2s infinite;
+    rotate: calc(var(--sl-giro, 0) * -1.4deg);
+    transition: rotate 1.2s cubic-bezier(.2,.8,.2,1);
+  }
+  /* la foto se asienta: entra apenas más grande y llega a su tamaño */
+  @keyframes sl-portada-foto-entra{ from{ transform:scale(1.04); opacity:0; } }
+  .sl-portada__figura image{
+    transform-box: view-box; transform-origin: 260px 260px;
+    animation: sl-portada-foto-entra 2.4s cubic-bezier(.22,1,.36,1) .2s both;
+  }
+  /* luz cálida detrás del retrato: se enciende despacio y se queda */
+  .sl-portada__figura{ position:relative; isolation:isolate; }
+  .sl-portada__figura::before{
+    content:''; position:absolute; inset:-12%; z-index:-1; pointer-events:none;
+    border-radius:50%;
+    background:radial-gradient(closest-side, rgba(248,183,22,.20), rgba(248,183,22,.07) 55%, transparent);
+    animation: sl-portada-luz 2.4s cubic-bezier(.22,1,.36,1) .8s both;
+  }
+  @keyframes sl-portada-luz{ from{ opacity:0; } }
+  @media (prefers-reduced-motion: reduce){
+    .sl-portada__rueda, .sl-portada__figura image, .sl-portada__figura::before{ animation:none; }
+    .sl-portada .sl-rueda-portada, .sl-portada__rueda{ rotate:none; transition:none; }
+  }
+  @media (max-width: 900px){
+    .sl-portada__inner{ grid-template-columns:1fr; }
+    .sl-portada__figura{ display:none; }
+    .sl-portada__rueda{ --sl-rueda-size:80vw; top:-30vw; opacity:.08; }
+  }
+</style>
+
+<section class="sl-portada">
+  <img class="sl-rueda sl-portada__rueda" src="assets/img/curso/scala-rueda.svg" alt="" aria-hidden="true" />
+
+  <div class="sl-portada__inner">
+    <div>
+      <div class="sl-portada__logo">
+        <img src="assets/img/logos/scala-logo.svg" alt="Scala Learning" />
+      </div>
+
+      <div class="sl-portada__eyebrow">Scala Virtual · Unidad 3</div>
+
+      <h1 class="sl-portada__title">
+        Gobierno, <span class="sl-suave">calidad y</span>
+        <span class="sl-italic">protección de datos</span>
+      </h1>
+
+      <p class="sl-portada__sub">Datos y Persistencia Avanzada: Diseño, Performance y Gobierno</p>
+
+      <!-- Idea clave de la introducción, literal -->
+      <p class="sl-portada__quote">
+        El gobierno de datos se demuestra con evidencia,
+        <span class="sl-italic">no se declara con políticas.</span>
+      </p>
+
+      <div class="sl-portada__acciones">
+        <a class="sl-portada__cta" href="temario.html">
+          Ver el contenido
+          <iconify-icon icon="mdi:arrow-right"></iconify-icon>
+        </a>
+      </div>
+    </div>
+
+    <div class="sl-portada__figura">
+      <!-- «Vincular Imagen-01» · foto libre de Pexels (licencia Pexels: uso comercial, sin
+           atribución obligatoria), elegida por producción para el demo porque la vista previa de
+           Envato (76URMJT) no se puede publicar. Original: insumos/Imagenes/Imagen-01-pexels-7647381.jpg
+           · https://www.pexels.com/photo/7647381/ · Anastasia Shuraeva. EDITORIAL · el aria-label
+           describe la foto: el DI vigente solo dice «Vincular Imagen-01», sin «Leyenda:». -->
+      <svg viewBox="0 0 520 520" role="img"
+           aria-label="Persona con traje trabajando en un computador portátil.">
+        <defs>
+          <clipPath id="clipPortadaFoto"><circle cx="260" cy="260" r="222"/></clipPath>
+        </defs>
+        <image href="assets/img/curso/portada-persona.webp"
+               x="38" y="38" width="444" height="444"
+               preserveAspectRatio="xMidYMid slice" clip-path="url(#clipPortadaFoto)"/>
+        <circle cx="260" cy="260" r="222" fill="none" stroke="#FFFFFF" stroke-opacity=".22" stroke-width="2"/>
+        <g class="sl-rueda-portada" fill="none" stroke-width="30" transform="rotate(-48 260 260)">
+          <circle cx="260" cy="260" r="222" stroke="#503B96" stroke-dasharray="282.7 1112.2" stroke-dashoffset="0"/>
+          <circle cx="260" cy="260" r="222" stroke="#F8B716" stroke-dasharray="282.7 1112.2" stroke-dashoffset="-348.7"/>
+          <circle cx="260" cy="260" r="222" stroke="#503B96" stroke-dasharray="282.7 1112.2" stroke-dashoffset="-697.4"/>
+          <circle cx="260" cy="260" r="222" stroke="#503B96" stroke-dasharray="282.7 1112.2" stroke-dashoffset="-1046.2"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Ruedas que responden al mouse: según dónde esté el puntero en horizontal,
+     deja en la portada --sl-giro entre −18 y 18 y el CSS de arriba gira el aro
+     del retrato hacia un lado y la rueda del fondo hacia el otro. Al salir el
+     puntero, vuelve a 0. Solo mouse (en táctil no hay puntero que seguir); con
+     movimiento reducido el CSS ignora la variable. Va aquí y no en skin.js
+     porque la portada multipágina no carga skin.js; el escucha queda en
+     document y se registra una sola vez aunque la SPA vuelva a pintar la portada. -->
+<script>
+  (() => {
+    if (window.slPortadaGiro) return;
+    window.slPortadaGiro = true;
+    const GIRO = 18;
+    let portada = null, giro = 0, marco = 0;
+    const aplicar = () => {
+      marco = 0;
+      if (portada) portada.style.setProperty('--sl-giro', giro.toFixed(1));
+    };
+    const soltar = () => {
+      if (!portada) return;
+      portada.style.setProperty('--sl-giro', '0');
+      portada = null;
+    };
+    document.addEventListener('pointermove', e => {
+      if (e.pointerType !== 'mouse') return;
+      const p = e.target.closest && e.target.closest('.sl-portada');
+      if (!p) { soltar(); return; }
+      if (p !== portada) soltar();
+      portada = p;
+      const caja = p.getBoundingClientRect();
+      giro = ((e.clientX - caja.left) / caja.width - 0.5) * 2 * GIRO;
+      if (!marco) marco = requestAnimationFrame(aplicar);
+    }, { passive: true });
+    document.addEventListener('pointerout', e => { if (!e.relatedTarget) soltar(); });
+  })();
+</script>

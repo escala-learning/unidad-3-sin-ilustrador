@@ -1,0 +1,508 @@
+      <header class="ova-screen__head" data-reveal>
+        <div class="ova-screen__eyebrow">Tema {{NUM}}</div>
+        <h1 class="ova-screen__title">Gobierno <span class="sl-suave">de</span> <span class="sl-italic">datos</span></h1>
+        <!-- Lead · literal del DI: el párrafo de propósito del tema -->
+        <p class="ova-screen__lead">El propósito de este primer tema es que usted pueda distinguir qué se decide, quién lo decide y cómo se hace exigible en materia de datos, y que pueda construir el andamiaje mínimo que sostiene cualquier control posterior. Es el tema más organizativo de toda la asignatura y, por esa razón, el que los equipos técnicos suelen subestimar. Conviene decirlo desde el inicio: la mayoría de los programas de gobierno de datos que fracasan no lo hacen por deficiencias técnicas, sino porque nadie tenía autoridad para decidir y nadie respondía por el resultado.</p>
+      </header>
+
+      <p data-reveal>Vuelva al caso de Red Salud Wari. El tablero de la gerencia médica y el reporte enviado a la aseguradora informan cifras distintas de atenciones del mismo mes. Antes de leer, formule su hipótesis sobre quién debería resolver esa discrepancia:</p>
+
+      <!-- Acordeón · sugerido por el DI. La pregunta queda abierta; la respuesta se abre. -->
+      <h3 class="sl-rotulo" data-reveal><strong>Caso de Red Salud Wari</strong></h3>
+      <!-- Llamado a la acción · guía del cliente (docs/llamados-a-la-accion-cliente-2026-10-09.png). Capa editorial. -->
+      <p class="sl-cta" data-reveal><span class="sl-cta__mano" aria-hidden="true"><iconify-icon icon="mdi:cursor-pointer"></iconify-icon></span>Haga clic en cada franja para ver la información.</p>
+      <div class="ova-acordeon" data-reveal>
+        <div class="ova-acordeon__item is-open">
+          <button class="ova-acordeon__head"><span><span class="num">01</span> <strong>Pregunta</strong></span><iconify-icon class="ova-acordeon__chev" icon="mdi:chevron-down"></iconify-icon></button>
+          <div class="ova-acordeon__body"><div class="ova-acordeon__body-inner">¿El equipo que construyó el tablero, el área médica que lo usa, la gerencia que lo recibe o el área de datos que administra los sistemas?</div></div>
+        </div>
+        <div class="ova-acordeon__item">
+          <button class="ova-acordeon__head"><span><span class="num">02</span> <strong>Respuesta</strong></span><iconify-icon class="ova-acordeon__chev" icon="mdi:chevron-down"></iconify-icon></button>
+          <div class="ova-acordeon__body"><div class="ova-acordeon__body-inner">La respuesta correcta es que ninguno puede resolverlo solo, y que la ausencia de una regla previa sobre quién define la métrica de atención es exactamente el vacío que el gobierno de datos viene a llenar.</div></div>
+        </div>
+      </div>
+
+      <!-- ════ Sección {{NUM}}.1 ════ -->
+      <section class="sl-seccion" id="gobierno-gestion" data-reveal>
+        <h2 class="sl-seccion__titulo">Gobierno, gestión <span class="sl-suave">y administración</span> <span class="sl-italic">de datos</span></h2>
+      </section>
+
+      <p data-reveal>El gobierno de datos es el ejercicio de autoridad y control sobre la gestión de los activos de datos: define quién puede tomar qué decisiones, bajo qué reglas y con qué consecuencias. La formulación proviene del cuerpo de conocimiento de la disciplina, que sitúa al gobierno en el centro de todas las demás funciones de gestión de datos precisamente porque no produce datos ni los procesa: los gobierna (DAMA International, 2024). Note el sustantivo clave: decisiones. Un programa de gobierno que no puede enumerar las decisiones que administra —quién autoriza un nuevo uso de datos personales, quién aprueba una transferencia a un tercero, quién define qué significa “atención” en el tablero, quién autoriza una excepción a la política de retención— no está gobernando nada, aunque tenga comité, política y herramienta.</p>
+
+      <!-- Comparativo · sugerido por el DI -->
+      <h3 class="sl-rotulo" data-reveal><strong>La gestión y la administración</strong></h3>
+      <div class="ova-vs" data-reveal>
+        <div class="ova-vs__card">
+          <span class="ova-vs__card-tag"><strong>Gestión de datos</strong></span>
+          <p style="margin-top:14px;">Es la función que ejecuta: planifica, diseña, opera y mantiene los datos a lo largo de su ciclo de vida. Incluye la arquitectura, el modelado, el almacenamiento, la seguridad, la integración, los metadatos y la calidad, es decir, prácticamente todo lo que usted trabajó en las dos unidades anteriores.</p>
+        </div>
+        <div class="ova-vs__divider">VS</div>
+        <div class="ova-vs__card ova-vs__card--alt">
+          <span class="ova-vs__card-tag"><strong>Administración cotidiana</strong></span>
+          <p style="margin-top:14px;">Lo que la literatura denomina <em>stewardship</em>, es la responsabilidad delegada en personas que conocen el dominio y velan por que las reglas se cumplan en el día a día: quien sabe que un resultado de laboratorio sin fecha de validación no es publicable, o que dos registros de paciente con el mismo documento deben fusionarse siguiendo un procedimiento y no a criterio del operador.</p>
+        </div>
+      </div>
+
+      <!-- Tabla 1 · literal del DI, con su título, su nota y su fuente -->
+      <figure class="sl-tabla-apa" data-reveal>
+        <figcaption>
+          <span class="sl-tabla-apa__num"><strong>Tabla 1</strong></span>
+          <span class="sl-tabla-apa__titulo">Funciones del gobierno, gestión, administración del dominio y cumplimiento de privacidad</span>
+        </figcaption>
+        <div class="ova-tabla"><table>
+          <thead><tr><th>Función</th><th>Pregunta que responde</th><th>Quién la ejerce</th><th>Artefacto característico</th></tr></thead>
+          <tbody>
+            <tr><td>Gobierno</td><td>¿Quién decide sobre estos datos, con qué regla y con qué excepciones admitidas?</td><td>Comité de gobierno con representación del negocio y patrocinio de la alta dirección.</td><td>Políticas, estándares, matriz de decisiones y clasificación de la información.</td></tr>
+            <tr><td>Gestión</td><td>¿Cómo se diseña, opera y mantiene el dato a lo largo de su ciclo de vida?</td><td>Áreas de arquitectura, ingeniería de datos y operaciones tecnológicas.</td><td>Modelos, canalizaciones de datos, controles implementados y procedimientos operativos.</td></tr>
+            <tr><td>Administración del dominio</td><td>¿Se están cumpliendo las reglas en este conjunto de datos concreto?</td><td>Personas del negocio con conocimiento del dominio y responsabilidad asignada.</td><td>Definiciones de negocio, reglas de calidad y resolución de excepciones documentadas.</td></tr>
+            <tr><td>Cumplimiento y privacidad</td><td>¿El tratamiento se ajusta a la norma y puede demostrarse?</td><td>Oficial de Datos Personales y área legal o de cumplimiento.</td><td>Registro de actividades, evaluaciones de impacto y constancias de consentimiento.</td></tr>
+          </tbody>
+        </table></div>
+        <p class="sl-tabla-apa__nota">Nota. Las cuatro funciones son complementarias y suelen convivir en organizaciones medianas con las mismas personas ejerciendo más de un rol; lo que no debe confundirse es la naturaleza de la decisión que cada una toma.</p>
+        <p class="sl-tabla-apa__fuente">Fuente: elaboración propia a partir de DAMA International (2024).</p>
+      </figure>
+
+      <div class="ova-callout" data-reveal>
+        <div class="ova-callout__ico"><iconify-icon icon="mdi:alert-circle-outline"></iconify-icon></div>
+        <div>
+          <span class="ova-callout__tag">Importante</span>
+          <p style="margin:8px 0 0;">La confusión más costosa en este terreno consiste en <strong>encargar el gobierno de datos al área de tecnología</strong>. Parece razonable —los datos viven en sistemas— y sin embargo produce un resultado predecible: el área de tecnología no tiene autoridad para decidir qué significa “atención” para el negocio, ni para negar el uso de un dato a una gerencia, ni para aceptar el riesgo de una excepción. El gobierno requiere autoridad sobre decisiones de negocio y, por lo tanto, patrocinio de la alta dirección y participación de las áreas que usan los datos. Lo que sí corresponde al área técnica es implementar los controles que las decisiones de gobierno definen, y aportar la evidencia de que funcionan. Esa división de trabajo es la que hace viable el programa.</p>
+        </div>
+      </div>
+
+      <p data-reveal>Existe una segunda decisión estructural que conviene tomar de manera consciente:</p>
+
+      <!-- Acordeón · sugerido por el DI para los tres modelos -->
+      <h3 class="sl-rotulo" data-reveal><strong>El modelo operativo</strong></h3>
+      <!-- Llamado a la acción · guía del cliente (docs/llamados-a-la-accion-cliente-2026-10-09.png). Capa editorial. -->
+      <p class="sl-cta" data-reveal><span class="sl-cta__mano" aria-hidden="true"><iconify-icon icon="mdi:cursor-pointer"></iconify-icon></span>Haga clic en cada franja para ver la información.</p>
+      <div class="ova-acordeon" data-reveal>
+        <div class="ova-acordeon__item is-open">
+          <button class="ova-acordeon__head"><span><span class="num">01</span> <strong>Modelo centralizado</strong></span><iconify-icon class="ova-acordeon__chev" icon="mdi:chevron-down"></iconify-icon></button>
+          <div class="ova-acordeon__body"><div class="ova-acordeon__body-inner">En un modelo centralizado, un equipo único define las reglas y las aplica a toda la organización; garantiza consistencia y suele volverse un cuello de botella cuando el volumen de dominios crece.</div></div>
+        </div>
+        <div class="ova-acordeon__item">
+          <button class="ova-acordeon__head"><span><span class="num">02</span> <strong>Modelo descentralizado</strong></span><iconify-icon class="ova-acordeon__chev" icon="mdi:chevron-down"></iconify-icon></button>
+          <div class="ova-acordeon__body"><div class="ova-acordeon__body-inner">En un modelo descentralizado, cada área gobierna sus propios datos; gana velocidad y pierde interoperabilidad, con definiciones divergentes de las mismas entidades.</div></div>
+        </div>
+        <div class="ova-acordeon__item">
+          <button class="ova-acordeon__head"><span><span class="num">03</span> <strong>Modelo federado</strong></span><iconify-icon class="ova-acordeon__chev" icon="mdi:chevron-down"></iconify-icon></button>
+          <div class="ova-acordeon__body"><div class="ova-acordeon__body-inner">El modelo federado —el más frecuente en organizaciones de tamaño medio— combina ambos: un núcleo define los principios, el marco de clasificación, las políticas transversales y los estándares mínimos, y cada dominio ejerce la administración de sus datos dentro de ese marco. Esta idea conecta directamente con lo trabajado en la Unidad 2 sobre la propiedad del dato por dominio: gobernar de manera federada es la contraparte organizativa de una arquitectura de datos distribuida.</div></div>
+        </div>
+      </div>
+
+      <!-- Ventana de detalle · sugerida por el DI -->
+      <button class="ova-btn ova-btn--outline" data-ova-modal-open="u3-reto-modelo" style="align-self:flex-start; margin:8px 0 28px;" data-reveal><iconify-icon icon="mdi:arrow-u-left-top"></iconify-icon> Volviendo al reto de la unidad</button>
+      <div class="ova-modal" id="u3-reto-modelo"><div class="ova-modal__dialog">
+        <div class="ova-modal__head"><h3><strong>Volviendo al reto de la unidad</strong></h3><button class="ova-modal__close" data-ova-modal-close aria-label="Cerrar"><iconify-icon icon="mdi:close"></iconify-icon></button></div>
+        <div class="ova-modal__body">
+          <p>Para Red Salud Wari, el modelo federado resuelve un problema concreto. La definición de “atención” no puede fijarla el área de tecnología ni cada clínica por separado; debe fijarla el dominio clínico, dentro de un marco que establezca que toda métrica publicada tiene una definición escrita, un responsable y una versión. Con esa sola regla, la discrepancia entre el tablero y el reporte de la aseguradora deja de ser un misterio: o bien ambos usan la definición publicada y coinciden, o bien uno de los dos aplica una regla distinta que debe declararse y justificarse ante quien recibe el reporte.</p>
+        </div>
+        <div class="ova-modal__foot"><button class="ova-btn ova-btn--outline" data-ova-modal-close>Cerrar</button></div>
+      </div></div>
+
+      <div class="ova-callout ova-callout--success" data-reveal>
+        <div class="ova-callout__ico"><iconify-icon icon="mdi:lightbulb-on-outline"></iconify-icon></div>
+        <div>
+          <span class="ova-callout__tag">Para tener en cuenta</span>
+          <p style="margin:8px 0 0;">Al iniciar un programa de gobierno, <strong>empiece por las decisiones y no por la herramienta</strong>. Enumere entre diez y quince decisiones reales que la organización toma hoy de manera informal o inconsistente —quién aprueba compartir datos con un tercero, quién autoriza un acceso a la historia clínica fuera del horario de atención, quién define una métrica corporativa, quién aprueba conservar datos más allá del plazo, quién decide si un incidente se notifica— y asigne para cada una un decisor, un consultado y un informado. Ese inventario cabe en dos páginas, no cuesta licencias y suele revelar que buena parte de las decisiones no tiene hoy responsable. Un catálogo de datos adquirido antes de ese ejercicio termina siendo un inventario técnico sin uso.</p>
+        </div>
+      </div>
+
+      <p data-reveal>Conviene también anticipar el argumento con el que el gobierno de datos suele venderse mal dentro de las organizaciones: como una función de control que restringe el uso de la información. Esa presentación garantiza resistencia.</p>
+
+      <!-- Pasos · sugeridos por el DI -->
+      <h3 class="sl-rotulo" data-reveal><strong>El gobierno bien entendido habilita:</strong></h3>
+      <div class="ova-stepper" data-reveal>
+        <div class="ova-step"><div class="ova-step__num"><span>01</span></div><div class="ova-step__card"><h3><strong>Usar</strong></h3><p>Permite que un equipo use datos de otro dominio sabiendo qué significan y en qué condiciones puede hacerlo.</p></div></div>
+        <div class="ova-step"><div class="ova-step__num"><span>02</span></div><div class="ova-step__card"><h3><strong>Avanzar</strong></h3><p>Permite que un proyecto de analítica avance porque existe una base habilitante documentada y no porque nadie preguntó.</p></div></div>
+        <div class="ova-step"><div class="ova-step__num"><span>03</span></div><div class="ova-step__card"><h3><strong>Responder</strong></h3><p>Permite responder en horas a un requerimiento de la autoridad en lugar de en semanas.</p></div></div>
+      </div>
+
+      <!-- Banner destacado · sugerido por el DI. Uno por sección. -->
+      <div class="sl-respiro" data-reveal>
+        <p>En un sector regulado como el de salud, esa capacidad de respuesta tiene además consecuencia económica directa.</p>
+      </div>
+
+      <p data-reveal>Para dimensionar esa consecuencia en el contexto peruano actual, conviene observar el comportamiento reciente de la autoridad de control.</p>
+
+      <!-- Dato con evidencia + Texto destacado del DI · una cifra destacada: la cifra y su
+           remate salen del «Texto destacado»; el párrafo, del «Dato con evidencia». -->
+      <div class="sl-cifras" data-reveal>
+        <div class="sl-cifras__datos">
+          <div class="sl-cifra">
+            <span class="sl-cifra__valor"><strong>760</strong></span>
+            <span class="sl-cifra__label">fiscalizaciones en 2025: más de dos por cada día del año.</span>
+          </div>
+        </div>
+        <div class="sl-cifras__texto">
+          <span class="sl-cifras__tag">Dato con evidencia</span>
+          <p>Durante 2025, la Autoridad Nacional de Protección de Datos Personales realizó 760 fiscalizaciones, un incremento del 67 % respecto de las 454 del año anterior, inició 136 procedimientos sancionadores e impuso multas por más de S/ 11 millones; el impacto acumulado entre 2018 y 2025 supera los S/ 50 millones, y la multa máxima aplicable equivale a 100 unidades impositivas tributarias, esto es, S/ 550 000 con el valor vigente en 2026 (LexLatin, 2026). El dato permite dimensionar un cambio de contexto: durante casi una década el cumplimiento en esta materia fue un asunto declarativo en el Perú, y hoy es una contingencia cuantificable que la dirección de cualquier organización con datos personales debe considerar en su gestión de riesgos.</p>
+        </div>
+      </div>
+
+      <p data-reveal>Antes de avanzar hacia los roles concretos, fije el criterio que permite reconocer un programa de gobierno que efectivamente gobierna.</p>
+
+      <!-- Carrusel · sugerido por el DI. Seis condiciones, sin título propio en el DI. -->
+      <h3 class="sl-rotulo" data-reveal><strong>Un esquema de gobierno de datos se considera aceptablemente constituido cuando:</strong></h3>
+      <!-- Llamado a la acción · guía del cliente (docs/llamados-a-la-accion-cliente-2026-10-09.png). Capa editorial. -->
+      <p class="sl-cta" data-reveal><span class="sl-cta__mano" aria-hidden="true"><iconify-icon icon="mdi:cursor-pointer"></iconify-icon></span>Haga clic en las flechas para desplazar la información.</p>
+      <div class="ova-carrusel" data-reveal>
+        <div class="ova-carrusel__track-wrap"><div class="ova-carrusel__track">
+          <div class="ova-carrusel__slide"><iconify-icon icon="mdi:format-list-checks" style="font-size:2.4rem; color:var(--c-acento);"></iconify-icon><p style="color:var(--text-mut); margin-top:12px;">Existe un inventario de decisiones sobre datos, cada una con un responsable identificado por su cargo.</p></div>
+          <div class="ova-carrusel__slide"><iconify-icon icon="mdi:file-document-check-outline" style="font-size:2.4rem; color:var(--c-acento);"></iconify-icon><p style="color:var(--text-mut); margin-top:12px;">Cada política vigente declara su alcance, la regla, el procedimiento de excepción, el responsable de aplicarla y la forma de verificar su cumplimiento.</p></div>
+          <div class="ova-carrusel__slide"><iconify-icon icon="mdi:shield-half-full" style="font-size:2.4rem; color:var(--c-acento);"></iconify-icon><p style="color:var(--text-mut); margin-top:12px;">Los conjuntos de datos críticos están clasificados por sensibilidad y esa clasificación tiene consecuencia técnica observable.</p></div>
+          <div class="ova-carrusel__slide"><iconify-icon icon="mdi:sitemap-outline" style="font-size:2.4rem; color:var(--c-acento);"></iconify-icon><p style="color:var(--text-mut); margin-top:12px;">El modelo operativo —centralizado, federado o descentralizado— está declarado y cada dominio conoce su ámbito de decisión.</p></div>
+          <div class="ova-carrusel__slide"><iconify-icon icon="mdi:calendar-check-outline" style="font-size:2.4rem; color:var(--c-acento);"></iconify-icon><p style="color:var(--text-mut); margin-top:12px;">El comité sesiona con periodicidad definida y sus acuerdos quedan registrados.</p></div>
+          <div class="ova-carrusel__slide"><iconify-icon icon="mdi:chart-line" style="font-size:2.4rem; color:var(--c-acento);"></iconify-icon><p style="color:var(--text-mut); margin-top:12px;">Existe al menos un indicador que la dirección revisa y que refleja el estado del programa, más allá del número de reuniones realizadas.</p></div>
+        </div></div>
+        <div class="ova-carrusel__nav"><div class="ova-carrusel__dots"></div><div class="ova-carrusel__arrows"><button class="ova-carrusel__arrow" data-ova-carrusel-prev aria-label="Anterior"><iconify-icon icon="mdi:arrow-left"></iconify-icon></button><button class="ova-carrusel__arrow" data-ova-carrusel-next aria-label="Siguiente"><iconify-icon icon="mdi:arrow-right"></iconify-icon></button></div></div>
+      </div>
+
+      <!-- ════ Sección {{NUM}}.2 ════ -->
+      <section class="sl-seccion" id="roles-politicas" data-reveal>
+        <h2 class="sl-seccion__titulo">Roles, políticas, responsabilidades <span class="sl-suave">y</span> <span class="sl-italic">ciclo de vida del dato</span></h2>
+      </section>
+
+      <p data-reveal>Los roles del gobierno de datos se enuncian con facilidad y se asignan con dificultad, porque exigen nombres propios y tiempo protegido. Conviene distinguir seis roles, 4 iniciales y 2 últimos roles.</p>
+
+      <!-- Carrusel · sugerido por el DI para los cuatro primeros roles -->
+      <h3 class="sl-rotulo" data-reveal><strong>4 primeros roles del gobierno de datos</strong></h3>
+      <!-- Llamado a la acción · guía del cliente (docs/llamados-a-la-accion-cliente-2026-10-09.png). Capa editorial. -->
+      <p class="sl-cta" data-reveal><span class="sl-cta__mano" aria-hidden="true"><iconify-icon icon="mdi:cursor-pointer"></iconify-icon></span>Haga clic en las flechas para desplazar la información.</p>
+      <div class="ova-carrusel" data-reveal>
+        <div class="ova-carrusel__track-wrap"><div class="ova-carrusel__track">
+          <div class="ova-carrusel__slide"><iconify-icon icon="mdi:account-tie-outline" style="font-size:2.4rem; color:var(--c-acento);"></iconify-icon><h4 style="margin-top:12px;"><strong>El propietario del dominio</strong></h4><p style="color:var(--text-mut);">Es quien responde por un conjunto de datos ante la organización: decide su definición, autoriza su uso y acepta el riesgo de sus excepciones.</p></div>
+          <div class="ova-carrusel__slide"><iconify-icon icon="mdi:server-security" style="font-size:2.4rem; color:var(--c-acento);"></iconify-icon><h4 style="margin-top:12px;"><strong>El custodio técnico</strong></h4><p style="color:var(--text-mut);">Administra el sistema que almacena los datos y ejecuta los controles: copias de seguridad, permisos, cifrado, disponibilidad.</p></div>
+          <div class="ova-carrusel__slide"><iconify-icon icon="mdi:clipboard-check-outline" style="font-size:2.4rem; color:var(--c-acento);"></iconify-icon><h4 style="margin-top:12px;"><strong>El administrador del dominio</strong></h4><p style="color:var(--text-mut);">Vela por el cumplimiento cotidiano de las reglas y resuelve las excepciones ordinarias.</p></div>
+          <div class="ova-carrusel__slide"><iconify-icon icon="mdi:account-group-outline" style="font-size:2.4rem; color:var(--c-acento);"></iconify-icon><h4 style="margin-top:12px;"><strong>El comité de gobierno</strong></h4><p style="color:var(--text-mut);">Decide sobre lo transversal y resuelve los conflictos entre dominios.</p></div>
+        </div></div>
+        <div class="ova-carrusel__nav"><div class="ova-carrusel__dots"></div><div class="ova-carrusel__arrows"><button class="ova-carrusel__arrow" data-ova-carrusel-prev aria-label="Anterior"><iconify-icon icon="mdi:arrow-left"></iconify-icon></button><button class="ova-carrusel__arrow" data-ova-carrusel-next aria-label="Siguiente"><iconify-icon icon="mdi:arrow-right"></iconify-icon></button></div></div>
+      </div>
+
+      <!-- Ventana de detalle · sugerida por el DI -->
+      <button class="ova-btn ova-btn--outline" data-ova-modal-open="u3-reto-roles" style="align-self:flex-start; margin:8px 0 28px;" data-reveal><iconify-icon icon="mdi:arrow-u-left-top"></iconify-icon> Volviendo al reto de la unidad</button>
+      <div class="ova-modal" id="u3-reto-roles"><div class="ova-modal__dialog">
+        <div class="ova-modal__head"><h3><strong>Volviendo al reto de la unidad</strong></h3><button class="ova-modal__close" data-ova-modal-close aria-label="Cerrar"><iconify-icon icon="mdi:close"></iconify-icon></button></div>
+        <div class="ova-modal__body"><p>Es importante conocer que, en Red Salud Wari, el propietario del dominio clínico es una jefatura médica, no un cargo técnico.</p></div>
+        <div class="ova-modal__foot"><button class="ova-btn ova-btn--outline" data-ova-modal-close>Cerrar</button></div>
+      </div></div>
+
+      <p data-reveal>Los dos roles restantes tienen origen normativo y conviene no confundirlos con los anteriores.</p>
+
+      <!-- Carrusel · pedido por el DI para los dos últimos roles. Mismo componente y misma
+           tarjeta que «4 primeros roles»: el rótulo de componente del Word manda (decisión del
+           2026-10-09, aunque el catálogo Scala sugería grilla para tres o menos). Iconos:
+           capa editorial. -->
+      <h3 class="sl-rotulo" data-reveal><strong>2 últimos roles del gobierno de datos</strong></h3>
+      <!-- Llamado a la acción · guía del cliente (docs/llamados-a-la-accion-cliente-2026-10-09.png). Capa editorial. -->
+      <p class="sl-cta" data-reveal><span class="sl-cta__mano" aria-hidden="true"><iconify-icon icon="mdi:cursor-pointer"></iconify-icon></span>Haga clic en las flechas para desplazar la información.</p>
+      <div class="ova-carrusel" data-reveal>
+        <div class="ova-carrusel__track-wrap"><div class="ova-carrusel__track">
+          <div class="ova-carrusel__slide"><iconify-icon icon="mdi:account-key-outline" style="font-size:2.4rem; color:var(--c-acento);"></iconify-icon><h4 style="margin-top:12px;"><strong>El responsable del tratamiento</strong></h4><p style="color:var(--text-mut);">Es quien decide las finalidades y los medios del tratamiento de datos personales —la red de clínicas—.</p></div>
+          <div class="ova-carrusel__slide"><iconify-icon icon="mdi:briefcase-account-outline" style="font-size:2.4rem; color:var(--c-acento);"></iconify-icon><h4 style="margin-top:12px;"><strong>El encargado del tratamiento</strong></h4><p style="color:var(--text-mut);">Es quien trata datos por cuenta del responsable —el proveedor de la historia clínica electrónica, el laboratorio externo, el servicio de mensajería que envía los resultados—.</p></div>
+        </div></div>
+        <div class="ova-carrusel__nav"><div class="ova-carrusel__dots"></div><div class="ova-carrusel__arrows"><button class="ova-carrusel__arrow" data-ova-carrusel-prev aria-label="Anterior"><iconify-icon icon="mdi:arrow-left"></iconify-icon></button><button class="ova-carrusel__arrow" data-ova-carrusel-next aria-label="Siguiente"><iconify-icon icon="mdi:arrow-right"></iconify-icon></button></div></div>
+      </div>
+
+      <p data-reveal>Esta distinción tiene consecuencias contractuales inmediatas: el responsable debe exigir por contrato al encargado medidas de seguridad, prohibición de usos propios y obligación de notificar incidentes de inmediato. El <strong>Oficial de Datos Personales</strong> supervisa el cumplimiento, actúa como punto de contacto con la autoridad y participa en las evaluaciones de impacto; su designación es obligatoria para determinadas categorías de organizaciones conforme al cronograma del Reglamento, y su ausencia es en sí misma una infracción, como se desarrollará en el Tema 3.</p>
+
+      <div class="ova-callout" data-reveal>
+        <div class="ova-callout__ico"><iconify-icon icon="mdi:alert-circle-outline"></iconify-icon></div>
+        <div>
+          <span class="ova-callout__tag">Importante</span>
+          <p style="margin:8px 0 0;">La asignación de roles solo produce efecto cuando viene acompañada de <strong>tiempo protegido y de acceso real</strong>. Designar a una jefatura médica como propietaria del dominio clínico sin liberarle horas de agenda, o nombrar a un Oficial de Datos Personales sin darle acceso a los sistemas ni capacidad de detener un tratamiento, produce el peor de los resultados: la organización aparece formalmente cubierta y no dispone de ninguna capacidad adicional. Ante una fiscalización, esa distancia entre el nombramiento y el ejercicio efectivo del rol es visible de inmediato, porque se pregunta por las decisiones en que el rol participó y por las evidencias que produjo. Al proponer una estructura de gobierno, incluya siempre la dedicación estimada de cada rol y el acceso que requiere.</p>
+        </div>
+      </div>
+
+      <p data-reveal>La herramienta práctica para ordenar todo esto es una <strong>matriz de responsabilidades por decisión</strong>, no por área.</p>
+
+      <!-- Comparativo · sugerido por el DI -->
+      <h3 class="sl-rotulo" data-reveal><strong>La diferencia importa:</strong></h3>
+      <div class="ova-vs" data-reveal>
+        <div class="ova-vs__card">
+          <span class="ova-vs__card-tag"><strong>Matriz por área</strong></span>
+          <p style="margin-top:14px;">Produce listas genéricas de funciones que nadie consulta.</p>
+        </div>
+        <div class="ova-vs__divider">VS</div>
+        <div class="ova-vs__card ova-vs__card--alt">
+          <span class="ova-vs__card-tag"><strong>Matriz por decisión</strong></span>
+          <p style="margin-top:14px;">Responde a la pregunta que surge en el momento del conflicto.</p>
+        </div>
+      </div>
+
+      <p data-reveal>Para cada decisión se identifica quién la toma, a quién debe consultarse antes, quién la ejecuta y a quién se informa después. Diez o quince decisiones bien resueltas ordenan más que un manual de cincuenta páginas.</p>
+
+      <p data-reveal>Las <strong>políticas</strong> requieren una anatomía que las haga operables.</p>
+
+      <!-- Pestañas · sugeridas por el DI. Seis, dos más de las que recomienda el catálogo;
+           se mantiene la sugerencia. Los rótulos de las pestañas son capa editorial
+           (abreviaturas del título de cada panel). -->
+      <h3 class="sl-rotulo" data-reveal><strong>Una política de datos útil declara seis elementos:</strong></h3>
+      <!-- Llamado a la acción · guía del cliente (docs/llamados-a-la-accion-cliente-2026-10-09.png). Capa editorial. -->
+      <p class="sl-cta" data-reveal><span class="sl-cta__mano" aria-hidden="true"><iconify-icon icon="mdi:cursor-pointer"></iconify-icon></span>Haga clic en cada pestaña para ver la información.</p>
+      <div class="ova-tabs" data-reveal>
+        <div class="ova-tabs__nav">
+          <button class="ova-tabs__btn is-active">Alcance</button>
+          <button class="ova-tabs__btn">Regla</button>
+          <button class="ova-tabs__btn">Excepción</button>
+          <button class="ova-tabs__btn">Responsable</button>
+          <button class="ova-tabs__btn">Verificación</button>
+          <button class="ova-tabs__btn">Consecuencia</button>
+        </div>
+        <div class="ova-tabs__panels">
+          <div class="ova-tabs__panel is-active"><h4><strong>Su alcance</strong></h4><p>A qué datos, sistemas y personas aplica.</p></div>
+          <div class="ova-tabs__panel"><h4><strong>La regla</strong></h4><p>Enunciada de modo que pueda determinarse si se cumple o no.</p></div>
+          <div class="ova-tabs__panel"><h4><strong>El procedimiento de excepción</strong></h4><p>Con quién la autoriza y por cuánto tiempo.</p></div>
+          <div class="ova-tabs__panel"><h4><strong>El responsable</strong></h4><p>De su aplicación.</p></div>
+          <div class="ova-tabs__panel"><h4><strong>El método de verificación</strong></h4><p>Es decir, qué evidencia demuestra el cumplimiento y con qué periodicidad se revisa.</p></div>
+          <div class="ova-tabs__panel"><h4><strong>La consecuencia</strong></h4><p>Del incumplimiento.</p></div>
+        </div>
+      </div>
+
+      <p data-reveal>Conviene distinguirlas de los <strong>estándares</strong> —que fijan el cómo técnico, por ejemplo, qué algoritmo de cifrado se emplea— y de los <strong>procedimientos</strong>, que describen la secuencia de pasos. Una organización que mezcla los tres niveles en un solo documento termina modificando la política cada vez que cambia una versión de <em>software.</em></p>
+
+      <div class="ova-callout ova-callout--danger" data-reveal>
+        <div class="ova-callout__ico"><iconify-icon icon="mdi:close-octagon-outline"></iconify-icon></div>
+        <div>
+          <span class="ova-callout__tag">Error frecuente</span>
+          <p style="margin:8px 0 0;">El error más extendido en esta materia es la <strong>política sin verificación</strong>: un documento aprobado que declara, por ejemplo, que “el acceso a la historia clínica se otorga según el principio de mínimo privilegio”, sin indicar quién revisa los permisos, con qué frecuencia ni qué evidencia se conserva. Ocurre porque redactar la regla es barato y verificarla cuesta tiempo de personas. La consecuencia aparece en la primera auditoría o en el primer incidente: la organización tiene la política, pero no puede demostrar que se cumple, y en un régimen de responsabilidad proactiva esa imposibilidad equivale a incumplimiento. Se detecta revisando cada política vigente y preguntando qué evidencia probaría su cumplimiento la semana pasada; si no existe respuesta, la política es declarativa. Se previene exigiendo que ninguna política se apruebe sin su método de verificación y sin un responsable con nombre.</p>
+        </div>
+      </div>
+
+      <p data-reveal>El <strong>ciclo de vida del dato</strong> organiza los controles en el tiempo y evita que el gobierno se concentre solo en la etapa de uso, que es la más visible. Seis etapas bastan para estructurarlo.</p>
+
+      <!-- Puntos de interés · sugeridos por el DI sobre la Imagen-02 (figura del diseñador).
+           Cada punto va en el recuadro vacío de su etapa. -->
+      <h3 class="sl-rotulo" data-reveal><strong>Ciclo de vida del dato</strong></h3>
+      <!-- Llamado a la acción · guía del cliente (docs/llamados-a-la-accion-cliente-2026-10-09.png). Capa editorial. -->
+      <p class="sl-cta" data-reveal><span class="sl-cta__mano" aria-hidden="true"><iconify-icon icon="mdi:cursor-pointer"></iconify-icon></span>Lleve el cursor sobre cada uno de los puntos, para revelar la información.</p>
+      <div class="ova-hotspots sl-hotspots-figura" data-reveal>
+        <div class="ova-hotspots__img">
+          <img src="assets/img/curso/figura-02-ciclo-vida-dato.webp" alt="Ciclo de vida del dato en seis etapas numeradas, unidas por flechas: 1 Creación o captura, 2 Almacenamiento, 3 Uso, 4 Compartición, 5 Archivo y 6 Destrucción." />
+            <div class="ova-hotspot" style="left:62%; top:16.5%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">1</div><div class="ova-hotspot__tooltip"><strong>Creación o captura</strong> Se decide la base habilitante, la finalidad, el consentimiento cuando corresponde y la calidad mínima de entrada.</div></div>
+            <div class="ova-hotspot" style="left:62%; top:32%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">2</div><div class="ova-hotspot__tooltip"><strong>Almacenamiento</strong> Se aplican la clasificación, el cifrado, la segregación de entornos y la ubicación geográfica de los datos.</div></div>
+            <div class="ova-hotspot" style="left:62%; top:47.5%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">3</div><div class="ova-hotspot__tooltip"><strong>Uso</strong> Operan el control de acceso, la minimización y el registro de auditoría.</div></div>
+            <div class="ova-hotspot" style="left:62%; top:62.5%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">4</div><div class="ova-hotspot__tooltip"><strong>Compartición</strong> Se activan los contratos con encargados, las condiciones de transferencia internacional y los acuerdos con terceros.</div></div>
+            <div class="ova-hotspot" style="left:62%; top:78%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">5</div><div class="ova-hotspot__tooltip"><strong>Archivo</strong> Se decide qué se conserva, por cuánto tiempo, en qué clase de almacenamiento y con qué accesibilidad.</div></div>
+            <div class="ova-hotspot" style="left:62%; top:93%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">6</div><div class="ova-hotspot__tooltip"><strong>Destrucción</strong> Se ejecuta la supresión, que debe alcanzar copias, respaldos, entornos no productivos e índices derivados, y dejar constancia de haberse realizado.</div></div>
+        </div>
+      </div>
+
+      <!-- Tabla 2 · literal del DI -->
+      <figure class="sl-tabla-apa" data-reveal>
+        <figcaption>
+          <span class="sl-tabla-apa__num"><strong>Tabla 2</strong></span>
+          <span class="sl-tabla-apa__titulo">Ciclo de vida del dato: riesgo dominante y control esperado en cada etapa</span>
+        </figcaption>
+        <div class="ova-tabla"><table>
+          <thead><tr><th>Etapa</th><th>Riesgo dominante</th><th>Control esperado</th><th>Evidencia que debe quedar</th></tr></thead>
+          <tbody>
+            <tr><td>Creación o captura</td><td>Tratar datos sin base habilitante o con una finalidad no informada al titular.</td><td>Registro de finalidad y base habilitante; consentimiento expreso cuando corresponda; validación de calidad en la entrada.</td><td>Constancia del consentimiento con fecha, versión del texto y canal.</td></tr>
+            <tr><td>Almacenamiento</td><td>Copias no controladas, entornos no productivos con datos reales y ubicación no declarada.</td><td>Clasificación por sensibilidad, cifrado en reposo, segregación de entornos y enmascaramiento en no producción.</td><td>Inventario de bancos de datos y de entornos, con su clasificación y su ubicación.</td></tr>
+            <tr><td>Uso</td><td>Acceso de personas que no lo necesitan para su función.</td><td>Acceso por rol y por fila, mínimo privilegio y registro de auditoría de consultas sensibles.</td><td>Registro de auditoría consultable y revisión periódica de permisos.</td></tr>
+            <tr><td>Compartición</td><td>Transferencia a terceros sin contrato ni garantías, incluidas las transferencias internacionales.</td><td>Contrato con el encargado, cláusulas de seguridad y verificación del nivel de protección del destino.</td><td>Contratos vigentes y registro de las transferencias realizadas.</td></tr>
+            <tr><td>Archivo</td><td>Conservar más de lo necesario o perder el acceso a información exigible.</td><td>Política de retención por conjunto de datos, con clase de almacenamiento y accesibilidad declaradas.</td><td>Política aprobada y evidencia de su ejecución automatizada.</td></tr>
+            <tr><td>Destrucción</td><td>Suprimir solo en el sistema principal y conservar el dato en copias derivadas.</td><td>Procedimiento de supresión que alcance respaldos, entornos no productivos e índices derivados.</td><td>Constancia de supresión con alcance y fecha, vinculada a la solicitud del titular.</td></tr>
+          </tbody>
+        </table></div>
+        <p class="sl-tabla-apa__nota">Nota. La etapa de destrucción es la que con mayor frecuencia carece de procedimiento probado, y es también la que la normativa peruana exige poder ejecutar cuando el titular ejerce su derecho de supresión.</p>
+        <p class="sl-tabla-apa__fuente">Fuente: elaboración propia a partir de DAMA International (2024) y del Reglamento de la Ley N.º 29733 (Perú, 2024).</p>
+      </figure>
+
+      <p data-reveal>La <strong>clasificación de la información</strong> merece un comentario porque es el punto donde el gobierno deja de ser documental y empieza a tener consecuencia técnica. Clasificar no consiste en poner etiquetas: consiste en declarar, para cada nivel, qué controles son obligatorios.</p>
+
+      <!-- Pasos con detalle · sugeridos por el DI para los cuatro niveles -->
+      <h3 class="sl-rotulo" data-reveal><strong>En Red Salud Wari, un esquema de cuatro niveles resulta suficiente:</strong></h3>
+      <!-- Llamado a la acción · guía del cliente (docs/llamados-a-la-accion-cliente-2026-10-09.png). Capa editorial. -->
+      <p class="sl-cta" data-reveal><span class="sl-cta__mano" aria-hidden="true"><iconify-icon icon="mdi:cursor-pointer"></iconify-icon></span>Haga clic en cada paso para ver la información.</p>
+      <div class="ova-timeline-h" data-ova-timeline data-reveal>
+        <script type="application/json" data-ova-steps>[
+            {
+              "tag": "Nivel 1",
+              "icon": "mdi:earth",
+              "title": "Nivel 1 - La información pública",
+              "desc": "Directorio de sedes, horarios.",
+              "tip": "no exige control de acceso."
+            },
+            {
+              "tag": "Nivel 2",
+              "icon": "mdi:account-key-outline",
+              "title": "Nivel 2 - La interna",
+              "desc": "Indicadores agregados de ocupación",
+              "tip": "exige autenticación."
+            },
+            {
+              "tag": "Nivel 3",
+              "icon": "mdi:lock-outline",
+              "title": "Nivel 3 - La confidencial",
+              "desc": "Datos de contacto de pacientes, condiciones comerciales de convenios.",
+              "tip": "exige acceso por rol, cifrado y registro de auditoría."
+            },
+            {
+              "tag": "Nivel 4",
+              "icon": "mdi:shield-lock-outline",
+              "title": "Nivel 4 - La sensible",
+              "desc": "Diagnósticos, resultados de laboratorio, datos biométricos.",
+              "tip": "exige además acceso por fila, prohibición de uso en entornos no productivos sin seudonimización y evaluación de impacto previa a cualquier nuevo tratamiento."
+            }
+          ]</script>
+        <div class="ova-timeline-h__track">
+            <button class="ova-step-card is-active" data-step="0"><span class="ova-step-card__num">01</span><span class="ova-step-card__label"><strong>Nivel 1 - La información pública</strong></span></button>
+            <button class="ova-step-card" data-step="1"><span class="ova-step-card__num">02</span><span class="ova-step-card__label"><strong>Nivel 2 - La interna</strong></span></button>
+            <button class="ova-step-card" data-step="2"><span class="ova-step-card__num">03</span><span class="ova-step-card__label"><strong>Nivel 3 - La confidencial</strong></span></button>
+            <button class="ova-step-card" data-step="3"><span class="ova-step-card__num">04</span><span class="ova-step-card__label"><strong>Nivel 4 - La sensible</strong></span></button>
+        </div>
+        <div class="ova-step-detail" data-ova-detail></div>
+      </div>
+
+      <p data-reveal>Note que la categoría de dato sensible no es una opinión de la organización: la normativa peruana la define expresamente e incluye los datos de salud y los biométricos.</p>
+
+      <div class="ova-callout ova-callout--success" data-reveal>
+        <div class="ova-callout__ico"><iconify-icon icon="mdi:lightbulb-on-outline"></iconify-icon></div>
+        <div>
+          <span class="ova-callout__tag">Para tener en cuenta</span>
+          <p style="margin:8px 0 0;">Al definir la política de retención, distinga entre el <strong>plazo mínimo exigido</strong> por una norma sectorial o contractual y el <strong>plazo máximo admisible</strong> por la normativa de protección de datos, que ordena conservar los datos personales solo mientras sean necesarios para la finalidad que los justificó. Ambos plazos deben coexistir en la misma política y para el mismo conjunto de datos: el primero impide destruir antes de tiempo y el segundo impide conservar indefinidamente. Cuando entran en conflicto aparente —una norma sectorial exige conservar y el titular solicita supresión— la decisión no corresponde al área técnica: debe escalarse al Oficial de Datos Personales y documentarse la base que sustenta la respuesta.</p>
+        </div>
+      </div>
+
+      <p data-reveal>Un punto que las organizaciones peruanas de tamaño medio resuelven tarde es el <strong>gobierno sobre los datos que administran terceros</strong>. Buena parte de la información crítica de una red de clínicas no reside en sistemas propios: la historia clínica electrónica suele ser de un proveedor, el laboratorio externo procesa y devuelve resultados, la plataforma de citas es un servicio contratado y los respaldos viven en una nube. En todos esos casos la responsabilidad frente al titular de los datos permanece en la organización que decidió la finalidad, no se transfiere junto con la operación. De ahí que el gobierno deba alcanzar la relación contractual: qué medidas de seguridad se exigen, qué usos propios quedan prohibidos, en qué plazo debe comunicarse un incidente, qué ocurre con los datos al terminar el contrato y quién verifica que todo ello se cumple. Una cláusula genérica de confidencialidad no satisface ninguno de esos puntos, y su insuficiencia se descubre siempre en el peor momento.</p>
+
+      <p data-reveal>Conviene añadir una observación sobre el factor que más determina el resultado de un programa de gobierno y que rara vez aparece en los planes:</p>
+
+      <!-- Carrusel · pedido por el DI para los tres perfiles. Mismo componente y misma tarjeta
+           que los demás carruseles del tema: el rótulo de componente del Word manda (decisión del
+           2026-10-09). Iconos: capa editorial. -->
+      <h3 class="sl-rotulo" data-reveal><strong>La capacidad de las personas que operan los datos a diario:</strong></h3>
+      <!-- Llamado a la acción · guía del cliente (docs/llamados-a-la-accion-cliente-2026-10-09.png). Capa editorial. -->
+      <p class="sl-cta" data-reveal><span class="sl-cta__mano" aria-hidden="true"><iconify-icon icon="mdi:cursor-pointer"></iconify-icon></span>Haga clic en las flechas para desplazar la información.</p>
+      <div class="ova-carrusel" data-reveal>
+        <div class="ova-carrusel__track-wrap"><div class="ova-carrusel__track">
+          <div class="ova-carrusel__slide"><iconify-icon icon="mdi:shield-account-outline" style="font-size:2.4rem; color:var(--c-acento);"></iconify-icon><h4 style="margin-top:12px;"><strong>Administrador</strong></h4><p style="color:var(--text-mut);">Un administrador que no distingue un dato sensible de uno confidencial otorgará permisos por conveniencia.</p></div>
+          <div class="ova-carrusel__slide"><iconify-icon icon="mdi:chart-box-outline" style="font-size:2.4rem; color:var(--c-acento);"></iconify-icon><h4 style="margin-top:12px;"><strong>Analista</strong></h4><p style="color:var(--text-mut);">Un analista que desconoce el principio de finalidad reutilizará un conjunto clínico para una campaña comercial creyendo que hace bien su trabajo.</p></div>
+          <div class="ova-carrusel__slide"><iconify-icon icon="mdi:code-braces" style="font-size:2.4rem; color:var(--c-acento);"></iconify-icon><h4 style="margin-top:12px;"><strong>Desarrollador</strong></h4><p style="color:var(--text-mut);">Un desarrollador que no sabe que el entorno de pruebas no debe contener datos reales copiará la base de producción para avanzar más rápido.</p></div>
+        </div></div>
+        <div class="ova-carrusel__nav"><div class="ova-carrusel__dots"></div><div class="ova-carrusel__arrows"><button class="ova-carrusel__arrow" data-ova-carrusel-prev aria-label="Anterior"><iconify-icon icon="mdi:arrow-left"></iconify-icon></button><button class="ova-carrusel__arrow" data-ova-carrusel-next aria-label="Siguiente"><iconify-icon icon="mdi:arrow-right"></iconify-icon></button></div></div>
+      </div>
+
+      <p data-reveal>Ninguno de los tres actúa de mala fe. La formación específica y breve —qué significa cada nivel de clasificación, qué decisiones requieren autorización y a quién se acude ante una duda— rinde en estos casos más que una herramienta adicional, y es además una medida que la autoridad valora al evaluar la diligencia de una organización.</p>
+
+      <p data-reveal>Un programa de gobierno necesita además indicadores que la dirección pueda leer, y conviene elegirlos con cuidado porque los equivocados desvían el esfuerzo. Contar reuniones del comité, políticas aprobadas o tablas catalogadas mide actividad, no resultado.</p>
+
+      <!-- Acordeón · sugerido por el DI -->
+      <h3 class="sl-rotulo" data-reveal><strong>Cuatro indicadores resultan más útiles y son verificables:</strong></h3>
+      <!-- Llamado a la acción · guía del cliente (docs/llamados-a-la-accion-cliente-2026-10-09.png). Capa editorial. -->
+      <p class="sl-cta" data-reveal><span class="sl-cta__mano" aria-hidden="true"><iconify-icon icon="mdi:cursor-pointer"></iconify-icon></span>Haga clic en cada franja para ver la información.</p>
+      <div class="ova-acordeon" data-reveal>
+        <div class="ova-acordeon__item is-open">
+          <button class="ova-acordeon__head"><span><span class="num">01</span> <strong>Datos críticos</strong></span><iconify-icon class="ova-acordeon__chev" icon="mdi:chevron-down"></iconify-icon></button>
+          <div class="ova-acordeon__body"><div class="ova-acordeon__body-inner">La proporción de conjuntos de datos críticos con propietario y clasificación asignados.</div></div>
+        </div>
+        <div class="ova-acordeon__item">
+          <button class="ova-acordeon__head"><span><span class="num">02</span> <strong>Reglas de calidad</strong></span><iconify-icon class="ova-acordeon__chev" icon="mdi:chevron-down"></iconify-icon></button>
+          <div class="ova-acordeon__body"><div class="ova-acordeon__body-inner">La proporción de reglas de calidad dentro de umbral en los conjuntos críticos.</div></div>
+        </div>
+        <div class="ova-acordeon__item">
+          <button class="ova-acordeon__head"><span><span class="num">03</span> <strong>Tiempo de atención</strong></span><iconify-icon class="ova-acordeon__chev" icon="mdi:chevron-down"></iconify-icon></button>
+          <div class="ova-acordeon__body"><div class="ova-acordeon__body-inner">El tiempo medio de atención de una solicitud de derechos de un titular.</div></div>
+        </div>
+        <div class="ova-acordeon__item">
+          <button class="ova-acordeon__head"><span><span class="num">04</span> <strong>Acceso a la información</strong></span><iconify-icon class="ova-acordeon__chev" icon="mdi:chevron-down"></iconify-icon></button>
+          <div class="ova-acordeon__body"><div class="ova-acordeon__body-inner">El número de accesos a información sensible sin justificación registrada, detectados en la revisión periódica.</div></div>
+        </div>
+      </div>
+
+      <!-- Banner destacado · pedido por el DI. Es el segundo de esta sección: el rótulo de
+           componente del Word manda sobre la regla de una banda por sección (INSTITUCION §4.4;
+           decisión del 2026-10-09). -->
+      <div class="sl-respiro" data-reveal>
+        <p>Los cuatro se pueden medir con lo que la organización ya tiene y los cuatro empeoran cuando el programa se abandona, que es exactamente lo que un indicador debe hacer.</p>
+      </div>
+
+      <p data-reveal>Vale la pena señalar, finalmente, cómo este tema se apoya en lo que usted decidió en las unidades anteriores. Un modelo de datos que, como se propuso en la Unidad 1, separa los identificadores directos del núcleo del esquema hace viable clasificar y proteger de manera diferenciada; una arquitectura que, como se trabajó en la Unidad 2, conserva instantáneas y particiona por periodo hace operable la política de retención y la supresión selectiva.</p>
+
+      <p data-reveal>Lo contrario también es cierto y vale como advertencia:</p>
+
+      <!-- Banner destacado · pedido por el DI (el tercero del tema, el segundo de esta sección). -->
+      <div class="sl-respiro" data-reveal>
+        <p>Un gobierno bien diseñado sobre una arquitectura que no puede localizar ni eliminar un dato termina produciendo políticas que la organización no está en condiciones de cumplir.</p>
+      </div>
+
+      <p data-reveal>Gobierno y arquitectura se condicionan mutuamente, y esa es la razón por la cual esta asignatura los trata como un mismo recorrido.</p>
+
+      <p data-reveal>Conviene cerrar el tema con una observación de orden práctico. Todo lo anterior puede implementarse de manera incremental y conviene hacerlo así: un programa que intenta gobernar los ciento veinte conjuntos de datos de una organización a la vez no termina nunca. La ruta que mejor funciona en organizaciones medianas empieza por identificar los cinco a diez conjuntos de datos críticos —aquellos cuyo error produce consecuencia clínica, económica o regulatoria—, asignarles propietario y clasificación, aplicarles los controles que su nivel exige y recién entonces extender el marco. Esa priorización es también la que permite mostrar resultados a la dirección en un plazo razonable, sin el cual ningún programa de gobierno sobrevive a su segundo año.</p>
+
+      <div class="ova-callout ova-callout--reflexion" data-reveal>
+        <div class="ova-callout__ico"><iconify-icon icon="mdi:head-question-outline"></iconify-icon></div>
+        <div>
+          <span class="ova-callout__tag">Ponte a prueba</span>
+          <p style="margin:8px 0 0;">En Red Salud Wari, la gerencia comercial solicita al área de datos una extracción con el historial de atenciones de los últimos tres años, incluyendo diagnóstico principal, para diseñar una campaña de prevención dirigida por correo electrónico. El área de datos tiene la capacidad técnica de producir esa extracción en una hora. Determine: (a) quién debe tomar la decisión de autorizar o denegar esa solicitud y a quién debe consultarse antes; (b) qué información necesita el decisor para resolver; (c) qué controles técnicos aplicaría si la solicitud fuera autorizada de manera parcial; y (d) qué evidencia debería quedar registrada cualquiera sea la decisión. Escriba su respuesta antes de avanzar y consérvela: el Tema 3 le permitirá contrastarla con las obligaciones normativas aplicables.</p>
+        </div>
+      </div>
+
+      <p data-reveal>Con las decisiones asignadas y el ciclo de vida ordenado, queda pendiente el problema que abrió esta unidad: por qué dos informes de la misma organización arrojan cifras distintas y cómo se rastrea el origen de un dato. Ese es el objeto del segundo tema.</p>
+
+      <p data-reveal>Para cerrar este tema es importante conocer el Panorama de Gobierno Digital en el Perú.</p>
+
+      <!-- Vincular PDF1 · el DI lo usa como ejemplo (decisión del cliente, 2026-10-08) -->
+      <!-- Llamado a la acción · guía del cliente (docs/llamados-a-la-accion-cliente-2026-10-09.png). Capa editorial. -->
+      <p class="sl-cta" data-reveal><span class="sl-cta__mano" aria-hidden="true"><iconify-icon icon="mdi:cursor-pointer"></iconify-icon></span>Haga clic en el botón para descargar el documento.</p>
+      <div class="sl-descarga" data-reveal>
+        <div class="sl-descarga__info"><b>Panorama de Gobierno Digital en el Perú</b><span>Secretaría de Gobierno y Transformación Digital · Presidencia del Consejo de Ministros (PDF, 24 páginas)</span></div>
+        <a class="ova-btn ova-btn--primary" href="assets/descargas/panorama-gobierno-digital-peru.pdf" target="_blank" rel="noopener" aria-label="Descargar el PDF (se abre en una pestaña nueva)">Descargar <iconify-icon icon="mdi:download"></iconify-icon></a>
+      </div>
+
+      <p data-reveal>Por último el estudiante verá el video para tener contexto del tema.</p>
+
+      <!-- Vincular video · el DI lo usa como ejemplo (decisión del cliente, 2026-10-08) -->
+      <!-- Llamado a la acción · guía del cliente (docs/llamados-a-la-accion-cliente-2026-10-09.png). Capa editorial. -->
+      <p class="sl-cta" data-reveal><span class="sl-cta__mano" aria-hidden="true"><iconify-icon icon="mdi:cursor-pointer"></iconify-icon></span>Haga clic en el botón de reproducir para visualizar el video.</p>
+      <div class="ova-video" data-reveal>
+        <div class="ova-video__frame" style="position:relative; padding-top:56.25%; border-radius:var(--r-lg); overflow:hidden; background:#000;">
+          <iframe src="https://player.vimeo.com/video/904024314" title="Video de apoyo del tema" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%;"></iframe>
+        </div>
+      </div>
+
+<!-- ova:extras -->
+<style>
+  /* Tabla en formato APA: el DI las entrega con número, título, nota y fuente, y así
+     deben leerse en pantalla. */
+  .sl-tabla-apa{ margin:44px 0 0; }
+  .sl-tabla-apa figcaption{ margin-bottom:12px; }
+  .sl-tabla-apa__num{
+    display:block; font-weight:700; color:var(--text-head);
+    font-size:.95rem; margin-bottom:2px;
+  }
+  .sl-tabla-apa__titulo{ display:block; font-style:italic; color:var(--text-sec); line-height:1.5; }
+  .sl-tabla-apa__nota,
+  .sl-tabla-apa__fuente{
+    margin:10px 0 0; font-size:.85rem; font-style:italic; color:var(--text-mut); line-height:1.55;
+  }
+  .sl-tabla-apa__fuente{ margin-top:4px; }
+  /* La figura del ciclo es vertical (1055 × 1491): a ancho completo ocuparía dos pantallas.
+     Se centra a un ancho que mantiene legibles sus rótulos. */
+  .sl-hotspots-figura{ max-width:560px; margin-inline:auto; }
+  /* El motor pinta el título del globo en violeta sobre navy (contraste insuficiente).
+     En Scala el amarillo guía la lectura sobre fondo oscuro. */
+  .sl-hotspots-figura .ova-hotspot__tooltip strong{ color:var(--c-calido); }
+  /* Móvil (INSTITUCION §4.14): las tablas de cuatro columnas no se encogen ni empujan la
+     página; se deslizan dentro de su contenedor. */
+  .sl-tabla-apa .ova-tabla{ overflow-x:auto; }
+  .sl-tabla-apa .ova-tabla table{ min-width:620px; }
+  /* «Pasos con detalle»: el motor rotula el detalle «Paso 01 · <tag>», y el tag repetía el
+     «Nivel N» del título. Queda solo «Paso 01», que es el rótulo del Word. */
+  .ova-timeline-h .ova-step-detail__tag span:nth-child(n+2){ display:none; }
+  /* Móvil (INSTITUCION §4.14): las ilustraciones con rótulos no se encogen a escala hormiga;
+     conservan un ancho legible y se deslizan dentro de su propio contenedor. */
+  @media (max-width: 700px){
+    .sl-ilustracion--rotulada{
+      overflow-x:auto; -webkit-overflow-scrolling:touch;
+      /* pista de que sigue a la derecha (mismo recurso que .sl-diagrama en la capa Scala) */
+      -webkit-mask-image:linear-gradient(to right, #000 calc(100% - 32px), transparent);
+              mask-image:linear-gradient(to right, #000 calc(100% - 32px), transparent);
+    }
+    .sl-ilustracion--rotulada img{ min-width:720px; }
+    /* el pie no se va con el desplazamiento: queda junto a lo que explica */
+    .sl-ilustracion--rotulada figcaption{ position:sticky; left:0; padding-right:32px; }
+  }
+</style>

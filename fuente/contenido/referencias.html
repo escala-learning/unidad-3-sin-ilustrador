@@ -1,0 +1,49 @@
+      <header class="ova-screen__head" data-reveal>
+        <div class="ova-screen__eyebrow">Fuentes académicas</div>
+        <h1 class="ova-screen__title">Referencias</h1>
+      </header>
+
+      <!-- Literal del DI §Referencias, con las cursivas del Word (el DI vigente no trae URL).
+           Estilo de la línea (ronda de Scala, 2026-10-02): autor y año sin negrilla, título de
+           la obra en cursiva (APA). -->
+      <div class="sl-referencias" data-reveal>
+        <p>Apache Software Foundation. (s. f.). <em>Apache Atlas documentation</em>.</p>
+        <p>DAMA International. (2024). <em>The DAMA-DMBOK 2.0 revised edition: Data management body of knowledge</em>. Technics Publications.</p>
+        <p>LexLatin. (2026, 10 de junio). <em>Perú reforma su régimen de protección de datos personales: qué cambia para las empresas en 2026</em>.</p>
+        <p>National Institute of Standards and Technology. (2020). <em>NIST Privacy Framework: A tool for improving privacy through enterprise risk management, Version 1.0</em>. U.S. Department of Commerce.</p>
+        <p>National Institute of Standards and Technology. (2025). <em>NIST Privacy Framework 1.1</em> <em>(Initial Public Draft, CSWP 40).</em></p>
+        <p>OpenLineage Community. (s. f.). <em>OpenLineage documentation</em>.</p>
+        <p>OpenMetadata. (s. f.). <em>Data lineage</em>. OpenMetadata Documentation.</p>
+        <p>Perú. Congreso de la República. (2011, 3 de julio). <em>Ley N.º 29733, Ley de Protección de Datos Personales</em>. Diario Oficial El Peruano.</p>
+        <p>Perú. Ministerio de Justicia y Derechos Humanos. (2024, 30 de noviembre). <em>Decreto Supremo N.º 016-2024-JUS: Reglamento de la Ley N.º 29733, Ley de Protección de Datos Personales</em>. Diario Oficial El Peruano.</p>
+        <p>PostgreSQL Global Development Group. (2026). <em>Row security policies</em>. PostgreSQL 18 Documentation.</p>
+      </div>
+
+<!-- ova:extras -->
+<style>
+  /* Lista de referencias alineada por completo a la izquierda, sin la sangría
+     francesa de APA: decisión del cliente (confirmada 2026-09-01 en la U1). */
+  .sl-referencias p{
+    padding-left:0; text-indent:0;
+    margin:0 0 22px; line-height:1.65;
+  }
+  /* Viñeta sutil: un punto en violeta atenuado (el tono de las iniciales del glosario). */
+  .sl-referencias p::before{
+    content:'';
+    display:inline-block;
+    width:7px; height:7px;
+    border-radius:50%;
+    background:color-mix(in srgb, var(--c-acento) 38%, transparent);
+    margin-right:12px;
+    vertical-align:.12em;
+  }
+  /* Las URL son enlaces de verdad; largas, así que pueden partirse */
+  .sl-ref__url{
+    color:var(--c-acento);
+    text-decoration:underline;
+    text-decoration-color:color-mix(in srgb, var(--c-acento) 40%, transparent);
+    text-underline-offset:3px;
+    overflow-wrap:anywhere;
+  }
+  .sl-ref__url:hover{ text-decoration-color:var(--c-acento); }
+</style>
