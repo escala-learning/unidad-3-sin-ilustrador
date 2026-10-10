@@ -14,12 +14,12 @@
    del curso) ni Glosario (va en el LMS). Una sola pregunta de evaluación. El PDF
    y el video se usan como ejemplo. Ver insumos/ERRORES-ORIGEN-2026-10-07.md §E.
 
-   VERSIÓN DERIVADA · SIN ILUSTRACIONES (2026-10-08). Copia de `unidad-3-v2` (la
+   VERSIÓN DERIVADA · SIN ILUSTRACIONES (2026-10-08). Copia de `unidad-3-con-ilustrador` (la
    maestra) sin las cuatro ilustraciones del agente ilustrador: en la introducción,
    la de apertura (ilustracion-cadena) y la de cuerpo (ilustracion-dos-errores,
    2026-10-09); en el tema 1, la de apertura (ilustracion-quien-decide) y la de
    cuerpo (ilustracion-dos-cifras).
-   NO SE EDITA A MANO: todo cambio se hace en `unidad-3-v2` y esta carpeta se
+   NO SE EDITA A MANO: todo cambio se hace en `unidad-3-con-ilustrador` y esta carpeta se
    vuelve a derivar (copiar y quitar esos cuatro <figure class="sl-ilustracion">,
    cada uno con su comentario y la línea en blanco que lo sigue).
    Las reglas CSS .sl-ilustracion--rotulada quedan en los extras sin uso: se dejan
