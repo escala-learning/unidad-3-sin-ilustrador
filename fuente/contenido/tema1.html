@@ -273,19 +273,22 @@
       <p data-reveal>El <strong>ciclo de vida del dato</strong> organiza los controles en el tiempo y evita que el gobierno se concentre solo en la etapa de uso, que es la más visible. Seis etapas bastan para estructurarlo.</p>
 
       <!-- Puntos de interés · sugeridos por el DI sobre la Imagen-02 (figura del diseñador).
-           Cada punto va en el recuadro vacío de su etapa. -->
+           DESVIACIÓN DEL DI: la base es un redibujo de producción de la Imagen-02, horizontal y en
+           la familia Scala (figura-02-ciclo-vida-dato.svg), en lugar de la figura del diseñador.
+           Decisión del usuario, 2026-10-10. EDITORIAL · a validar con el cliente. Cada punto va
+           donde iría el número de su etapa. -->
       <h3 class="sl-rotulo" data-reveal><strong>Ciclo de vida del dato</strong></h3>
       <!-- Llamado a la acción · guía del cliente (docs/llamados-a-la-accion-cliente-2026-10-09.png). Capa editorial. -->
       <p class="sl-cta" data-reveal><span class="sl-cta__mano" aria-hidden="true"><iconify-icon icon="mdi:cursor-pointer"></iconify-icon></span>Lleve el cursor sobre cada uno de los puntos, para revelar la información.</p>
       <div class="ova-hotspots sl-hotspots-figura" data-reveal>
         <div class="ova-hotspots__img">
-          <img src="assets/img/curso/figura-02-ciclo-vida-dato.webp" alt="Ciclo de vida del dato en seis etapas numeradas, unidas por flechas: 1 Creación o captura, 2 Almacenamiento, 3 Uso, 4 Compartición, 5 Archivo y 6 Destrucción." />
-            <div class="ova-hotspot" style="left:62%; top:16.5%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">1</div><div class="ova-hotspot__tooltip"><strong>Creación o captura</strong> Se decide la base habilitante, la finalidad, el consentimiento cuando corresponde y la calidad mínima de entrada.</div></div>
-            <div class="ova-hotspot" style="left:62%; top:32%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">2</div><div class="ova-hotspot__tooltip"><strong>Almacenamiento</strong> Se aplican la clasificación, el cifrado, la segregación de entornos y la ubicación geográfica de los datos.</div></div>
-            <div class="ova-hotspot" style="left:62%; top:47.5%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">3</div><div class="ova-hotspot__tooltip"><strong>Uso</strong> Operan el control de acceso, la minimización y el registro de auditoría.</div></div>
-            <div class="ova-hotspot" style="left:62%; top:62.5%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">4</div><div class="ova-hotspot__tooltip"><strong>Compartición</strong> Se activan los contratos con encargados, las condiciones de transferencia internacional y los acuerdos con terceros.</div></div>
-            <div class="ova-hotspot" style="left:62%; top:78%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">5</div><div class="ova-hotspot__tooltip"><strong>Archivo</strong> Se decide qué se conserva, por cuánto tiempo, en qué clase de almacenamiento y con qué accesibilidad.</div></div>
-            <div class="ova-hotspot" style="left:62%; top:93%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">6</div><div class="ova-hotspot__tooltip"><strong>Destrucción</strong> Se ejecuta la supresión, que debe alcanzar copias, respaldos, entornos no productivos e índices derivados, y dejar constancia de haberse realizado.</div></div>
+          <img src="assets/img/curso/figura-02-ciclo-vida-dato.svg" alt="Ciclo de vida del dato en seis etapas, en fila y unidas por flechas: Creación o captura, Almacenamiento, Uso, Compartición, Archivo y Destrucción. Debajo de la fila corre una flecha amarilla: el tiempo." />
+            <div class="ova-hotspot" style="left:5.33%; top:26%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">1</div><div class="ova-hotspot__tooltip"><strong>Creación o captura</strong> Se decide la base habilitante, la finalidad, el consentimiento cuando corresponde y la calidad mínima de entrada.</div></div>
+            <div class="ova-hotspot" style="left:21.67%; top:26%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">2</div><div class="ova-hotspot__tooltip"><strong>Almacenamiento</strong> Se aplican la clasificación, el cifrado, la segregación de entornos y la ubicación geográfica de los datos.</div></div>
+            <div class="ova-hotspot" style="left:38%; top:26%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">3</div><div class="ova-hotspot__tooltip"><strong>Uso</strong> Operan el control de acceso, la minimización y el registro de auditoría.</div></div>
+            <div class="ova-hotspot" style="left:54.33%; top:26%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">4</div><div class="ova-hotspot__tooltip"><strong>Compartición</strong> Se activan los contratos con encargados, las condiciones de transferencia internacional y los acuerdos con terceros.</div></div>
+            <div class="ova-hotspot" style="left:70.67%; top:26%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">5</div><div class="ova-hotspot__tooltip"><strong>Archivo</strong> Se decide qué se conserva, por cuánto tiempo, en qué clase de almacenamiento y con qué accesibilidad.</div></div>
+            <div class="ova-hotspot" style="left:87%; top:26%;"><div class="ova-hotspot__pulse"></div><div class="ova-hotspot__dot">6</div><div class="ova-hotspot__tooltip"><strong>Destrucción</strong> Se ejecuta la supresión, que debe alcanzar copias, respaldos, entornos no productivos e índices derivados, y dejar constancia de haberse realizado.</div></div>
         </div>
       </div>
 
@@ -481,7 +484,15 @@
   .sl-tabla-apa__fuente{ margin-top:4px; }
   /* La figura del ciclo es vertical (1055 × 1491): a ancho completo ocuparía dos pantallas.
      Se centra a un ancho que mantiene legibles sus rótulos. */
-  .sl-hotspots-figura{ max-width:560px; margin-inline:auto; }
+  .sl-hotspots-figura{ margin-inline:auto; }
+  /* Móvil (INSTITUCION §4.14): la figura del ciclo, con rótulos, conserva 720 px de ancho y se
+     desliza dentro de su caja; los puntos se mueven con ella. La caja que se desliza también
+     recorta en vertical: 24 px más abajo para que el globo más largo («Destrucción», que se
+     abre hacia abajo) quepa entero (medido a 390 px, 2026-10-10). */
+  @media (max-width: 720px){
+    .sl-hotspots-figura{ overflow-x:auto; padding-bottom:40px; }
+    .sl-hotspots-figura .ova-hotspots__img{ min-width:720px; }
+  }
   /* El motor pinta el título del globo en violeta sobre navy (contraste insuficiente).
      En Scala el amarillo guía la lectura sobre fondo oscuro. */
   .sl-hotspots-figura .ova-hotspot__tooltip strong{ color:var(--c-calido); }
